@@ -1,5 +1,5 @@
 import streamlit as st
-from sklearn.svm import SVC  
+from sklearn import svm  
 from PIL import Image, ImageFilter, ImageEnhance
 from sklearn.metrics import precision_score, accuracy_score, recall_score
 from sklearn.model_selection import train_test_split
@@ -71,7 +71,7 @@ y = df['Species']
 X_train, X_test, y_train, y_test = train_test_split(
     X, y, test_size=0.2)
 
-classifier = SVC()
+classifier = svm.SVC()
 scaler = StandardScaler()
 scaler.fit(X_train)
 classifier.fit(X_train, y_train)
